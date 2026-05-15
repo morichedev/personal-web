@@ -1,529 +1,157 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoricheDev — Alejandro Moriche Granado | Frontend Developer · AI Engineer · SysAdmin</title>
-    <meta name="description" content="Elite Frontend Developer, AI Engineer & Systems Administrator. Building the next generation of digital experiences.">
-    <meta property="og:title" content="MoricheDev — Alejandro Moriche Granado">
-    <meta property="og:description" content="Elite Frontend Developer, AI Engineer & Systems Administrator.">
+    <title>Alejandro Moriche Granado | AI Automation Engineer & Systems Administrator</title>
+    <meta name="description" content="Portfolio de Alejandro Moriche Granado — estudiante de ASIR especializado en IA y Big Data, enfocado en automatización, sistemas y desarrollo web moderno.">
+    <meta property="og:title" content="Alejandro Moriche Granado">
+    <meta property="og:description" content="AI Automation Engineer & Systems Administrator.">
     <meta property="og:type" content="website">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Cabinet+Grotesk:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    
+
     <!-- External Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
- 
-    <!-- CURSOR -->
-    <div id="cursor">
-        <div id="cursor-dot"></div>
-        <div id="cursor-ring"></div>
+
+<!-- HERO DESC -->
+<p class="hero-desc" id="hero-desc"
+   data-en="Systems Administration student specialized in AI & Big Data. Focused on AI automation, Linux systems, networking and modern web development. Building real technical skills through continuous self-learning and experimentation."
+   data-es="Estudiante de Administración de Sistemas especializado en IA y Big Data. Enfocado en automatización con IA, sistemas Linux, redes y desarrollo web moderno. Construyendo habilidades técnicas reales mediante aprendizaje autodidacta y experimentación constante.">
+    Systems Administration student specialized in AI & Big Data. Focused on AI automation, Linux systems, networking and modern web development. Building real technical skills through continuous self-learning and experimentation.
+</p>
+
+<!-- HERO STATS -->
+<div class="hero-stats" id="hero-stats">
+    <div>
+        <span class="hero-stat-num">2+</span>
+        <span class="hero-stat-label" data-en="Years Learning" data-es="Años aprendiendo">Years Learning</span>
     </div>
- 
-    <!-- LOADER -->
-    <div id="loader">
-        <div id="loader-logo">MoricheDev</div>
-        <div id="loader-bar-wrap"><div id="loader-bar"></div></div>
-        <div id="loader-label">Initializing experience...</div>
+    <div style="width:1px;height:40px;background:var(--border2)"></div>
+    <div>
+        <span class="hero-stat-num">1</span>
+        <span class="hero-stat-label" data-en="Main Project" data-es="Proyecto principal">Main Project</span>
     </div>
- 
-    <!-- NAV -->
-    <nav id="nav">
-        <a href="#hero" class="nav-logo">MoricheDev</a>
-        <ul class="nav-links">
-            <li><a href="#about" class="nav-link" data-en="About" data-es="Sobre mí">About</a></li>
-            <li><a href="#skills" class="nav-link" data-en="Skills" data-es="Habilidades">Skills</a></li>
-            <li><a href="#studies" class="nav-link" data-en="Studies" data-es="Estudios">Studies</a></li>
-            <li><a href="#projects" class="nav-link" data-en="Projects" data-es="Proyectos">Projects</a></li>
-            <li><a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a></li>
-        </ul>
-        <div class="nav-right">
-            <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
-            <button class="lang-btn" id="btn-es" onclick="setLang('es')">ES</button>
-            <button class="nav-menu-btn" id="menu-btn" aria-label="Open menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
- 
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobile-menu">
-        <button class="mobile-menu-close" onclick="closeMobileMenu()">✕</button>
-        <a href="#about" onclick="closeMobileMenu()" class="nav-link" data-en="About" data-es="Sobre mí">About</a>
-        <a href="#skills" onclick="closeMobileMenu()" class="nav-link" data-en="Skills" data-es="Habilidades">Skills</a>
-        <a href="#studies" onclick="closeMobileMenu()" class="nav-link" data-en="Studies" data-es="Estudios">Studies</a>
-        <a href="#projects" onclick="closeMobileMenu()" class="nav-link" data-en="Projects" data-es="Proyectos">Projects</a>
-        <a href="#contact" onclick="closeMobileMenu()" class="nav-link" data-en="Contact" data-es="Contacto">Contact</a>
+    <div style="width:1px;height:40px;background:var(--border2)"></div>
+    <div>
+        <span class="hero-stat-num">8+</span>
+        <span class="hero-stat-label" data-en="Technical Areas" data-es="Áreas técnicas">Technical Areas</span>
     </div>
- 
-    <!-- AUDIO BUTTON -->
-    <button id="audio-btn" onclick="toggleAudio()" aria-label="Toggle ambient audio">🔇</button>
- 
-    <!-- HERO -->
-    <section id="hero">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero-noise"></div>
-        <div class="hero-gradient"></div>
-        <div class="hero-content">
-            <div class="hero-tag" id="hero-tag">
-                <span data-en="Available for opportunities" data-es="Disponible para oportunidades">Available for opportunities</span>
-            </div>
-            <h1 class="hero-name" id="hero-name">
-                <span>Alejandro</span>
-                <span class="accent-name">Moriche</span>
-            </h1>
-            <div class="hero-role-wrap" id="hero-role-wrap">
-                <div class="hero-role" id="hero-role">
-                    <span data-en="Elite" data-es="Elite">Elite</span>&nbsp;<span class="role-text" id="role-text">Frontend Developer</span>
-                </div>
-            </div>
-            <p class="hero-desc" id="hero-desc"
-               data-en="Building next-generation digital experiences at the intersection of design, AI, and systems engineering. Precision. Performance. Impact."
-               data-es="Construyendo experiencias digitales de próxima generación en la intersección del diseño, IA e ingeniería de sistemas. Precisión. Rendimiento. Impacto.">
-                Building next-generation digital experiences at the intersection of design, AI, and systems engineering. Precision. Performance. Impact.
-            </p>
-            <div class="hero-cta" id="hero-cta">
-                <a href="#projects" class="btn-primary">
-                    <span data-en="View Projects" data-es="Ver Proyectos">View Projects</span>
-                    <span>→</span>
-                </a>
-                <a href="#contact" class="btn-secondary">
-                    <span data-en="Get in Touch" data-es="Hablemos">Get in Touch</span>
-                </a>
-            </div>
-            <div class="hero-stats" id="hero-stats">
-                <div>
-                    <span class="hero-stat-num">1</span>
-                    <span class="hero-stat-label" data-en="Years Building" data-es="Años construyendo">Years Building</span>
-                </div>
-                <div style="width:1px;height:40px;background:var(--border2)"></div>
-                <div>
-                    <span class="hero-stat-num">20+</span>
-                    <span class="hero-stat-label" data-en="Projects Shipped" data-es="Proyectos entregados">Projects Shipped</span>
-                </div>
-                <div style="width:1px;height:40px;background:var(--border2)"></div>
-                <div>
-                    <span class="hero-stat-num">3</span>
-                    <span class="hero-stat-label" data-en="Core Disciplines" data-es="Disciplinas principales">Core Disciplines</span>
-                </div>
-                <div style="width:1px;height:40px;background:var(--border2)"></div>
-                <div>
-                    <span class="hero-stat-num">∞</span>
-                    <span class="hero-stat-label" data-en="Lines of Ambition" data-es="Líneas de ambición">Lines of Ambition</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll" id="hero-scroll">
-            <span data-en="Scroll" data-es="Deslizar">Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
- 
-    <div class="divider"></div>
- 
-    <!-- ABOUT -->
-    <section id="about">
-        <div class="section-wrap">
-            <div class="section-label">
-                <span data-en="01 — About" data-es="01 — Sobre mí">01 — About</span>
-            </div>
-            <div class="about-grid">
-                <div class="about-avatar-wrap fade-up">
-                    <div class="about-avatar-bg"></div>
-                    <div class="about-avatar">
-                        <div class="about-avatar-inner">
-                            <span class="about-avatar-monogram">AMG</span>
-                        </div>
-                    </div>
-                    <div class="about-tag-grid">
-                        <span class="about-tag-pill green" data-en="✦ Open to work" data-es="✦ Abierto a empleo">✦ Open to work</span>
-                        <span class="about-tag-pill blue" data-en="⬡ AI Engineer" data-es="⬡ Ingeniero IA">⬡ AI Engineer</span>
-                        <span class="about-tag-pill purple" data-en="◈ SysAdmin" data-es="◈ SysAdmin">◈ SysAdmin</span>
-                    </div>
-                </div>
-                <div class="about-content fade-up" style="transition-delay:0.15s">
-                    <div class="section-label">
-                        <span data-en="Who I Am" data-es="Quién soy">Who I Am</span>
-                    </div>
-                    <h2 class="section-title">
-                        <span data-en="Engineering with " data-es="Ingeniería con ">Engineering with </span><span data-en="purpose" data-es="propósito">purpose</span><span style="-webkit-text-fill-color:var(--text)">.</span>
-                    </h2>
-                    <p class="about-text"
-                       data-en="I'm <strong>Alejandro Moriche Granado</strong> — a multidisciplinary technical creator operating at the intersection of frontend engineering, artificial intelligence, and systems architecture. I don't just write code; I engineer experiences that make technology feel inevitable."
-                       data-es="Soy <strong>Alejandro Moriche Granado</strong> — un creador técnico multidisciplinar que opera en la intersección de la ingeniería frontend, la inteligencia artificial y la arquitectura de sistemas. No solo escribo código; diseño experiencias que hacen que la tecnología parezca inevitable.">
-                        I'm <strong>Alejandro Moriche Granado</strong> — a multidisciplinary technical creator operating at the intersection of frontend engineering, artificial intelligence, and systems architecture. I don't just write code; I engineer experiences that make technology feel inevitable.
-                    </p>
-                    <p class="about-text"
-                       data-en="Driven by relentless curiosity, I build AI-powered systems, design interfaces that captivate, and architect infrastructure that scales. My work bridges the gap between raw technical capability and polished, human-centered design."
-                       data-es="Impulsado por una curiosidad incansable, construyo sistemas potenciados por IA, diseño interfaces que cautivan y arquitecto infraestructuras que escalan. Mi trabajo tiende puentes entre la capacidad técnica pura y el diseño refinado centrado en las personas.">
-                        Driven by relentless curiosity, I build AI-powered systems, design interfaces that captivate, and architect infrastructure that scales. My work bridges the gap between raw technical capability and polished, human-centered design.
-                    </p>
-                    <div class="about-highlights">
-                        <div class="about-highlight">
-                            <span class="about-hl-icon">⚡</span>
-                            <div class="about-hl-title" data-en="Performance First" data-es="Rendimiento primero">Performance First</div>
-                            <div class="about-hl-text" data-en="Sub-100ms load targets, optimized bundles, edge-deployed" data-es="Objetivos de carga sub-100ms, bundles optimizados, edge-deployado">Sub-100ms load targets, optimized bundles, edge-deployed</div>
-                        </div>
-                        <div class="about-highlight">
-                            <span class="about-hl-icon">🧠</span>
-                            <div class="about-hl-title" data-en="AI-Native Thinking" data-es="Pensamiento AI-nativo">AI-Native Thinking</div>
-                            <div class="about-hl-text" data-en="LLMs, agents, RAG pipelines — built and deployed in production" data-es="LLMs, agentes, pipelines RAG — construidos y desplegados en producción">LLMs, agents, RAG pipelines — built and deployed in production</div>
-                        </div>
-                        <div class="about-highlight">
-                            <span class="about-hl-icon">🔒</span>
-                            <div class="about-hl-title" data-en="Security-Conscious" data-es="Mentalidad de seguridad">Security-Conscious</div>
-                            <div class="about-hl-text" data-en="Network hardening, penetration awareness, zero-trust mindset" data-es="Hardening de redes, conciencia de pentesting, mentalidad zero-trust">Network hardening, penetration awareness, zero-trust mindset</div>
-                        </div>
-                        <div class="about-highlight">
-                            <span class="about-hl-icon">🎯</span>
-                            <div class="about-hl-title" data-en="Systems Thinker" data-es="Pensamiento sistémico">Systems Thinker</div>
-                            <div class="about-hl-text" data-en="Infrastructure, automation, CI/CD — the full stack, literally" data-es="Infraestructura, automatización, CI/CD — el stack completo, literalmente">Infrastructure, automation, CI/CD — the full stack, literally</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-    <div class="divider"></div>
- 
-    <!-- SKILLS -->
-    <section id="skills">
-        <div class="section-wrap">
-            <div class="section-label">
-                <span data-en="02 — Skills" data-es="02 — Habilidades">02 — Skills</span>
-            </div>
-            <h2 class="section-title fade-up">
-                <span data-en="Technical " data-es="Arsenal ">Technical </span><span data-en="arsenal" data-es="técnico">arsenal</span><span style="-webkit-text-fill-color:var(--text)">.</span>
-            </h2>
-            <p class="section-sub fade-up" style="transition-delay:0.1s"
-               data-en="A curated stack of technologies I use to build production-grade systems — from pixel-perfect UIs to hardened server infrastructure."
-               data-es="Un stack curado de tecnologías que utilizo para construir sistemas de nivel productivo — desde interfaces pixel-perfect hasta infraestructura de servidor fortalecida.">
-                A curated stack of technologies I use to build production-grade systems — from pixel-perfect UIs to hardened server infrastructure.
-            </p>
-            <div class="skills-grid" id="skills-grid">
-                <!-- Frontend -->
-                <div class="skill-card stagger-child" style="--accent-color:#6e57ff;--icon-bg:rgba(110,87,255,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">⚛️</div>
-                        <div>
-                            <div class="skill-card-name">Frontend</div>
-                            <div class="skill-card-cat" data-en="UI Engineering" data-es="Ingeniería UI">UI Engineering</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">React</span><span class="skill-tag">Next.js</span><span class="skill-tag">TypeScript</span><span class="skill-tag">TailwindCSS</span><span class="skill-tag">Framer Motion</span><span class="skill-tag">Three.js</span><span class="skill-tag">GSAP</span><span class="skill-tag">WebGL</span>
-                    </div>
-                </div>
-                <!-- Backend -->
-                <div class="skill-card stagger-child" style="--accent-color:#4fc8ff;--icon-bg:rgba(79,200,255,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">🖥️</div>
-                        <div>
-                            <div class="skill-card-name">Backend</div>
-                            <div class="skill-card-cat" data-en="Server Engineering" data-es="Ingeniería de Servidor">Server Engineering</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Node.js</span><span class="skill-tag">Python</span><span class="skill-tag">FastAPI</span><span class="skill-tag">Express</span><span class="skill-tag">REST APIs</span><span class="skill-tag">GraphQL</span><span class="skill-tag">WebSockets</span>
-                    </div>
-                </div>
-                <!-- AI -->
-                <div class="skill-card stagger-child" style="--accent-color:#ff6b9d;--icon-bg:rgba(255,107,157,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">🧠</div>
-                        <div>
-                            <div class="skill-card-name">Artificial Intelligence</div>
-                            <div class="skill-card-cat" data-en="AI / ML Engineering" data-es="Ingeniería AI / ML">AI / ML Engineering</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">LangChain</span><span class="skill-tag">OpenAI API</span><span class="skill-tag">RAG Pipelines</span><span class="skill-tag">Fine-tuning</span><span class="skill-tag">Embeddings</span><span class="skill-tag">AI Agents</span><span class="skill-tag">Hugging Face</span>
-                    </div>
-                </div>
-                <!-- Cloud -->
-                <div class="skill-card stagger-child" style="--accent-color:#f0c060;--icon-bg:rgba(240,192,96,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">☁️</div>
-                        <div>
-                            <div class="skill-card-name">Cloud & DevOps</div>
-                            <div class="skill-card-cat" data-en="Infrastructure" data-es="Infraestructura">Infrastructure</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span><span class="skill-tag">Kubernetes</span><span class="skill-tag">AWS</span><span class="skill-tag">Vercel</span><span class="skill-tag">CI/CD</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Terraform</span>
-                    </div>
-                </div>
-                <!-- Linux -->
-                <div class="skill-card stagger-child" style="--accent-color:#4ade80;--icon-bg:rgba(74,222,128,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">🐧</div>
-                        <div>
-                            <div class="skill-card-name">Linux & Systems</div>
-                            <div class="skill-card-cat" data-en="OS Administration" data-es="Administración de SO">OS Administration</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Ubuntu</span><span class="skill-tag">Debian</span><span class="skill-tag">Arch Linux</span><span class="skill-tag">Bash</span><span class="skill-tag">Systemd</span><span class="skill-tag">Cron</span><span class="skill-tag">Shell Scripting</span>
-                    </div>
-                </div>
-                <!-- Security -->
-                <div class="skill-card stagger-child" style="--accent-color:#f97316;--icon-bg:rgba(249,115,22,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">🔐</div>
-                        <div>
-                            <div class="skill-card-name" data-en="Cybersecurity" data-es="Ciberseguridad">Cybersecurity</div>
-                            <div class="skill-card-cat" data-en="Network Security" data-es="Seguridad de Red">Network Security</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Firewalls</span><span class="skill-tag">VPN</span><span class="skill-tag">Nmap</span><span class="skill-tag">Wireshark</span><span class="skill-tag">SSL/TLS</span><span class="skill-tag">Zero-Trust</span><span class="skill-tag">Pen Testing</span>
-                    </div>
-                </div>
-                <!-- Networking -->
-                <div class="skill-card stagger-child" style="--accent-color:#a78bfa;--icon-bg:rgba(167,139,250,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">🌐</div>
-                        <div>
-                            <div class="skill-card-name" data-en="Networking" data-es="Redes">Networking</div>
-                            <div class="skill-card-cat" data-en="Network Administration" data-es="Administración de Redes">Network Administration</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TCP/IP</span><span class="skill-tag">DNS</span><span class="skill-tag">DHCP</span><span class="skill-tag">Routing</span><span class="skill-tag">VLANs</span><span class="skill-tag">Cisco</span><span class="skill-tag">pfSense</span>
-                    </div>
-                </div>
-                <!-- DB -->
-                <div class="skill-card stagger-child" style="--accent-color:#22d3ee;--icon-bg:rgba(34,211,238,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">🗄️</div>
-                        <div>
-                            <div class="skill-card-name">Databases</div>
-                            <div class="skill-card-cat" data-en="Data Engineering" data-es="Ingeniería de Datos">Data Engineering</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Redis</span><span class="skill-tag">Supabase</span><span class="skill-tag">Prisma</span><span class="skill-tag">Vector DB</span><span class="skill-tag">Elasticsearch</span>
-                    </div>
-                </div>
-                <!-- Automation -->
-                <div class="skill-card stagger-child" style="--accent-color:#fb923c;--icon-bg:rgba(251,146,60,0.15)">
-                    <div class="skill-card-header">
-                        <div class="skill-icon">⚙️</div>
-                        <div>
-                            <div class="skill-card-name" data-en="Automation" data-es="Automatización">Automation</div>
-                            <div class="skill-card-cat" data-en="Scripts & Workflows" data-es="Scripts & Flujos">Scripts & Workflows</div>
-                        </div>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python Scripts</span><span class="skill-tag">Ansible</span><span class="skill-tag">n8n</span><span class="skill-tag">Webhooks</span><span class="skill-tag">Cron Jobs</span><span class="skill-tag">Make.com</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-    <div class="divider"></div>
- 
-    <!-- STUDIES -->
-    <section id="studies">
-        <div class="section-wrap">
-            <div class="section-label">
-                <span data-en="03 — Studies" data-es="03 — Estudios">03 — Studies</span>
-            </div>
-            <h2 class="section-title fade-up">
-                <span data-en="Education & " data-es="Educación & ">Education & </span><span data-en="Formation" data-es="Formación">Formation</span><span style="-webkit-text-fill-color:var(--text)">.</span>
-            </h2>
-            <div class="studies-list">
-                <div class="study-item fade-up">
-                    <div class="study-year"><span data-en="2022 — Present" data-es="2022 — Presente">2022 — Present</span></div>
-                    <div>
-                        <div class="study-title" data-en="ASIR — Network Systems & Infrastructure" data-es="ASIR — Administración de Sistemas e Infraestructura">ASIR — Network Systems & Infrastructure</div>
-                        <div class="study-org">IES Polígono Sur</div>
-                    </div>
-                </div>
-                <div class="study-item fade-up" style="transition-delay:0.1s">
-                    <div class="study-year"><span>2024</span></div>
-                    <div>
-                        <div class="study-title" data-en="Advanced Frontend Engineering" data-es="Ingeniería Frontend Avanzada">Advanced Frontend Engineering</div>
-                        <div class="study-org">Self-Directed / Specialized Bootcamps</div>
-                    </div>
-                </div>
-                <div class="study-item fade-up" style="transition-delay:0.2s">
-                    <div class="study-year"><span>2023</span></div>
-                    <div>
-                        <div class="study-title" data-en="AI & Machine Learning Foundations" data-es="Fundamentos de IA y Machine Learning">AI & Machine Learning Foundations</div>
-                        <div class="study-org">Online Certifications</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-    <div class="divider"></div>
- 
-    <!-- PROJECTS -->
-    <section id="projects">
-        <div class="section-wrap">
-            <div class="section-label">
-                <span data-en="04 — Projects" data-es="04 — Proyectos">04 — Projects</span>
-            </div>
-            <h2 class="section-title fade-up">
-                <span data-en="Selected " data-es="Trabajos ">Selected </span><span data-en="works" data-es="seleccionados">works</span><span style="-webkit-text-fill-color:var(--text)">.</span>
-            </h2>
-            <div class="projects-grid">
-                <!-- Featured Project -->
-                <a href="#" class="project-card featured fade-up">
-                    <div class="project-visual">
-                        <div class="project-vis-bg" style="background:radial-gradient(circle at center, #6e57ff33, transparent)"></div>
-                        <div class="project-vis-grid"></div>
-                        <div class="project-vis-label">NEURALINK UI</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <span class="project-type" data-en="Web Application" data-es="Aplicación Web">Web Application</span>
-                            <div class="project-dot"></div>
-                            <span class="project-status" style="color:#4ade80" data-en="Live" data-es="En vivo">Live</span>
-                        </div>
-                        <h3 class="project-title">Next-Gen Interface for Neural Data</h3>
-                        <p class="project-desc" data-en="A high-performance dashboard for visualizing real-time neural telemetry using WebGL and advanced data pipelines." data-es="Un panel de alto rendimiento para visualizar telemetría neuronal en tiempo real usando WebGL y pipelines de datos avanzados.">A high-performance dashboard for visualizing real-time neural telemetry using WebGL and advanced data pipelines.</p>
-                        <div class="project-stack">
-                            <span class="stack-tag">Next.js</span><span class="stack-tag">Three.js</span><span class="stack-tag">WebSockets</span><span class="stack-tag">Rust</span>
-                        </div>
-                        <div class="project-link">
-                            <span data-en="Case Study" data-es="Caso de estudio">Case Study</span><span>→</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Project 2 -->
-                <a href="#" class="project-card fade-up">
-                    <div class="project-visual">
-                        <div class="project-vis-bg" style="background:radial-gradient(circle at center, #4fc8ff22, transparent)"></div>
-                        <div class="project-vis-label" style="font-size:1.5rem">SENTINEL AI</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <span class="project-type" data-en="AI Agent" data-es="Agente IA">AI Agent</span>
-                            <div class="project-dot"></div>
-                            <span class="project-status" style="color:var(--text3)" data-en="Internal" data-es="Interno">Internal</span>
-                        </div>
-                        <h3 class="project-title">Autonomous Network Security</h3>
-                        <p class="project-desc" data-en="AI agents that monitor network traffic and autonomously mitigate threats using RAG-based analysis." data-es="Agentes de IA que monitorean el tráfico de red y mitigan amenazas de forma autónoma usando análisis basado en RAG.">AI agents that monitor network traffic and autonomously mitigate threats using RAG-based analysis.</p>
-                        <div class="project-stack">
-                            <span class="stack-tag">Python</span><span class="stack-tag">LangChain</span><span class="stack-tag">Docker</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- Project 3 -->
-                <a href="#" class="project-card fade-up">
-                    <div class="project-visual">
-                        <div class="project-vis-bg" style="background:radial-gradient(circle at center, #ff6b9d22, transparent)"></div>
-                        <div class="project-vis-label" style="font-size:1.5rem">CORE CLOUD</div>
-                    </div>
-                    <div class="project-content">
-                        <div class="project-meta">
-                            <span class="project-type" data-en="Infrastructure" data-es="Infraestructura">Infrastructure</span>
-                            <div class="project-dot"></div>
-                            <span class="project-status" style="color:var(--gold)" data-en="In Progress" data-es="En progreso">In Progress</span>
-                        </div>
-                        <h3 class="project-title">Zero-Trust Network Mesh</h3>
-                        <p class="project-desc" data-en="Architecting a globally distributed private network with end-to-end encryption and automated provisioning." data-es="Arquitectura de una red privada distribuida globalmente con cifrado de extremo a extremo y aprovisionamiento automatizado.">Architecting a globally distributed private network with end-to-end encryption and automated provisioning.</p>
-                        <div class="project-stack">
-                            <span class="stack-tag">Kubernetes</span><span class="stack-tag">Terraform</span><span class="stack-tag">Go</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
- 
-    <div class="divider"></div>
- 
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="section-wrap">
-            <div class="section-label">
-                <span data-en="05 — Contact" data-es="05 — Contacto">05 — Contact</span>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info fade-up">
-                    <h2 class="contact-info-title">
-                        <span data-en="Let's build the " data-es="Construyamos el ">Let's build the </span><span data-en="future" data-es="futuro">future</span><span>.</span>
-                    </h2>
-                    <p class="contact-info-sub" data-en="Open for elite opportunities, collaborations, or technical inquiries. Reach out and let's start a conversation." data-es="Abierto a oportunidades de élite, colaboraciones o consultas técnicas. Contáctame y comencemos una conversación.">Open for elite opportunities, collaborations, or technical inquiries. Reach out and let's start a conversation.</p>
-                    <div class="contact-links">
-                        <a href="alejandro.moriche.dev@gmail.com" class="contact-link">
-                            <div class="contact-link-icon">✉</div>
-                            <div>
-                                <div class="contact-link-label">Email</div>
-                                <div class="contact-link-value">alejandro.moriche.dev@gmail.com</div>
-                            </div>
-                        </a>
-                        <a href="https://linkedin.com/in/morichedev" target="_blank" class="contact-link">
-                            <div class="contact-link-icon">in</div>
-                            <div>
-                                <div class="contact-link-label">LinkedIn</div>
-                                <div class="contact-link-value">@morichedev</div>
-                            </div>
-                        </a>
-                        <a href="https://github.com/morichedev" target="_blank" class="contact-link">
-                            <div class="contact-link-icon">⌨</div>
-                            <div>
-                                <div class="contact-link-label">GitHub</div>
-                                <div class="contact-link-value">@morichedev</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form fade-up" style="transition-delay:0.15s">
-                    <div class="form-row">
-                        <div class="form-field">
-                            <label class="form-label" data-en="Name" data-es="Nombre">Name</label>
-                            <input type="text" class="form-input" data-placeholder-en="John Doe" data-placeholder-es="Juan Pérez" placeholder="John Doe" id="f-name">
-                        </div>
-                        <div class="form-field">
-                            <label class="form-label" data-en="Email" data-es="Email">Email</label>
-                            <input type="email" class="form-input" data-placeholder-en="john@example.com" data-placeholder-es="juan@ejemplo.com" placeholder="john@example.com" id="f-email">
-                        </div>
-                    </div>
-                    <div class="form-field">
-                        <label class="form-label" data-en="Subject" data-es="Asunto">Subject</label>
-                        <input type="text" class="form-input" data-placeholder-en="Frontend role at Acme Inc." data-placeholder-es="Posición frontend en Acme Inc." placeholder="Frontend role at Acme Inc." id="f-subject">
-                    </div>
-                    <div class="form-field">
-                        <label class="form-label" data-en="Message" data-es="Mensaje">Message</label>
-                        <textarea class="form-textarea" data-placeholder-en="Tell me about the opportunity..." data-placeholder-es="Cuéntame sobre la oportunidad..." placeholder="Tell me about the opportunity..." id="f-message"></textarea>
-                    </div>
-                    <button class="form-submit" onclick="sendMessage()">
-                        <span data-en="Send Message" data-es="Enviar Mensaje">Send Message</span>
-                        <span>→</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
- 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-logo">MoricheDev</div>
-        <div class="footer-copy">
-            <span data-en="© 2025 Alejandro Moriche Granado. Crafted with obsession." data-es="© 2025 Alejandro Moriche Granado. Construido con obsesión.">© 2025 Alejandro Moriche Granado. Crafted with obsession.</span>
-        </div>
-        <a href="#hero" class="footer-back-top">
-            <span data-en="Back to top" data-es="Volver arriba">Back to top</span> ↑
-        </a>
-    </footer>
- 
-    <!-- Custom Script -->
-    <script src="js/script.js"></script>
-</body>
-</html>
+    <div style="width:1px;height:40px;background:var(--border2)"></div>
+    <div>
+        <span class="hero-stat-num">∞</span>
+        <span class="hero-stat-label" data-en="Motivation" data-es="Motivación">Motivation</span>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<p class="about-text"
+   data-en="I'm <strong>Alejandro Moriche Granado</strong>, a Systems Administration student from Cáceres, Spain, currently specializing in Artificial Intelligence and Big Data. My main interests are AI automation, Linux systems, networking and modern frontend development."
+   data-es="Soy <strong>Alejandro Moriche Granado</strong>, estudiante de Administración de Sistemas de Cáceres, España, actualmente especializado en Inteligencia Artificial y Big Data. Mis principales intereses son la automatización con IA, los sistemas Linux, las redes y el desarrollo frontend moderno.">
+    I'm <strong>Alejandro Moriche Granado</strong>, a Systems Administration student from Cáceres, Spain, currently specializing in Artificial Intelligence and Big Data. My main interests are AI automation, Linux systems, networking and modern frontend development.
+</p>
+
+<p class="about-text"
+   data-en="I have developed my web development skills in a self-taught way while studying systems administration. I enjoy building technical projects, experimenting with automation tools and continuously improving my knowledge across infrastructure, AI and development."
+   data-es="He desarrollado mis habilidades de desarrollo web de forma autodidacta mientras estudiaba administración de sistemas. Disfruto construyendo proyectos técnicos, experimentando con herramientas de automatización y mejorando constantemente mis conocimientos en infraestructura, IA y desarrollo.">
+    I have developed my web development skills in a self-taught way while studying systems administration. I enjoy building technical projects, experimenting with automation tools and continuously improving my knowledge across infrastructure, AI and development.
+</p>
+
+<!-- ABOUT HIGHLIGHTS -->
+<div class="about-highlight">
+    <span class="about-hl-icon">⚡</span>
+    <div class="about-hl-title" data-en="Self-Taught Developer" data-es="Desarrollador autodidacta">Self-Taught Developer</div>
+    <div class="about-hl-text" data-en="Learning frontend development through practice and personal projects" data-es="Aprendiendo desarrollo frontend mediante práctica y proyectos personales">Learning frontend development through practice and personal projects</div>
+</div>
+
+<div class="about-highlight">
+    <span class="about-hl-icon">🧠</span>
+    <div class="about-hl-title" data-en="AI Automation" data-es="Automatización IA">AI Automation</div>
+    <div class="about-hl-text" data-en="Interested in AI workflows, automation systems and intelligent tools" data-es="Interesado en flujos IA, sistemas de automatización y herramientas inteligentes">Interested in AI workflows, automation systems and intelligent tools</div>
+</div>
+
+<div class="about-highlight">
+    <span class="about-hl-icon">🐧</span>
+    <div class="about-hl-title" data-en="Linux Systems" data-es="Sistemas Linux">Linux Systems</div>
+    <div class="about-hl-text" data-en="Experience working with Linux environments, networking and system administration" data-es="Experiencia trabajando con entornos Linux, redes y administración de sistemas">Experience working with Linux environments, networking and system administration</div>
+</div>
+
+<div class="about-highlight">
+    <span class="about-hl-icon">🚀</span>
+    <div class="about-hl-title" data-en="Continuous Learning" data-es="Aprendizaje continuo">Continuous Learning</div>
+    <div class="about-hl-text" data-en="Always exploring new technologies, tools and development practices" data-es="Explorando constantemente nuevas tecnologías, herramientas y prácticas de desarrollo">Always exploring new technologies, tools and development practices</div>
+</div>
+
+<!-- STUDIES -->
+<div class="study-item fade-up">
+    <div class="study-year"><span data-en="2023 — 2025" data-es="2023 — 2025">2023 — 2025</span></div>
+    <div>
+        <div class="study-title" data-en="ASIR — Systems Administration & Networking" data-es="ASIR — Administración de Sistemas y Redes">ASIR — Systems Administration & Networking</div>
+        <div class="study-org">IES Ágora</div>
+    </div>
+</div>
+
+<div class="study-item fade-up" style="transition-delay:0.1s">
+    <div class="study-year"><span data-en="2025 — 2026" data-es="2025 — 2026">2025 — 2026</span></div>
+    <div>
+        <div class="study-title" data-en="Artificial Intelligence & Big Data Specialization" data-es="Especialización en Inteligencia Artificial y Big Data">Artificial Intelligence & Big Data Specialization</div>
+        <div class="study-org">IES Ágora</div>
+    </div>
+</div>
+
+<div class="study-item fade-up" style="transition-delay:0.2s">
+    <div class="study-year"><span>2024 — Present</span></div>
+    <div>
+        <div class="study-title" data-en="Self-Taught Web Development" data-es="Desarrollo Web Autodidacta">Self-Taught Web Development</div>
+        <div class="study-org">Independent Learning</div>
+    </div>
+</div>
+
+<!-- PROJECTS -->
+<h3 class="project-title">Personal Portfolio Website</h3>
+<p class="project-desc"
+   data-en="Modern responsive portfolio developed to showcase my technical profile, frontend skills and systems administration background."
+   data-es="Portfolio responsive moderno desarrollado para mostrar mi perfil técnico, habilidades frontend y conocimientos de administración de sistemas.">
+    Modern responsive portfolio developed to showcase my technical profile, frontend skills and systems administration background.
+</p>
+
+<div class="project-stack">
+    <span class="stack-tag">HTML</span>
+    <span class="stack-tag">CSS</span>
+    <span class="stack-tag">JavaScript</span>
+    <span class="stack-tag">GSAP</span>
+    <span class="stack-tag">Three.js</span>
+</div>
+
+<!-- CONTACT -->
+<a href="mailto:alejandro.moriche.dev@gmail.com" class="contact-link">
+    <div class="contact-link-icon">✉</div>
+    <div>
+        <div class="contact-link-label">Email</div>
+        <div class="contact-link-value">alejandro.moriche.dev@gmail.com</div>
+    </div>
+</a>
+
+<a href="https://github.com/morichedev" target="_blank" class="contact-link">
+    <div class="contact-link-icon">⌨</div>
+    <div>
+        <div class="contact-link-label">GitHub</div>
+        <div class="contact-link-value">@morichedev</div>
+    </div>
+</a>
+
+<!-- FOOTER -->
+<span data-en="© 2025 Alejandro Moriche Granado. Built with passion for technology." data-es="© 2025 Alejandro Moriche Granado. Construido con pasión por la tecnología.">
+    © 2025 Alejandro Moriche Granado. Built with passion for technology.
+</span>
+
